@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10110f" />
+    <meta name="description" content="The personal page of Mahdi Reverted. Find and connect with Mahdi on LinkedIn." />
+    <title>Mahdi Reverted — Personal Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #10110f;
+        --surface: #181a17;
+        --text: #f3f1e9;
+        --muted: #9c9d93;
+        --line: rgba(243, 241, 233, .12);
+        --lime: #d3fb70;
+        --mono: "DM Mono", monospace;
+        --sans: "DM Sans", sans-serif;
+        --display: "Manrope", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); }
+      body::before { position: fixed; inset: 0; z-index: -1; content: ""; opacity: .14; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E"); }
+      a { color: inherit; }
+      .progress { position: fixed; top: 0; left: 0; z-index: 20; height: 2px; width: 0; background: var(--lime); }
+      .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+      nav { height: 86px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
+      .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 700; letter-spacing: -.03em; }
+      .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; color: var(--bg); background: var(--lime); font-family: var(--display); font-size: 15px; font-weight: 800; }
+      .nav-link { color: var(--muted); font-size: 14px; text-decoration: none; transition: color .2s ease; }
+      .nav-link:hover { color: var(--lime); }
+      .hero { min-height: 610px; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 48px; padding-block: 80px 88px; }
+      .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--lime); font: 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+      .eyebrow::before { width: 22px; height: 1px; content: ""; background: currentColor; }
+      h1 { margin: 24px 0 20px; font: 800 clamp(56px, 8vw, 104px)/.98 var(--display); letter-spacing: -.075em; }
+      h1 span { color: var(--lime); }
+      .intro { max-width: 500px; color: var(--muted); font-size: 17px; line-height: 1.8; }
+      .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 32px; }
+      .button { display: inline-flex; gap: 11px; align-items: center; justify-content: center; min-height: 48px; padding: 0 19px; border: 1px solid var(--lime); border-radius: 4px; background: var(--lime); color: #14160f; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s, color .2s; }
+      .button:hover { transform: translateY(-3px); background: transparent; color: var(--lime); }
+      .button.secondary { border-color: var(--line); background: transparent; color: var(--text); }
+      .button.secondary:hover { border-color: var(--lime); color: var(--lime); }
+      .arrow { transition: transform .2s; }
+      .button:hover .arrow { transform: translate(3px, -2px); }
+      .visual { position: relative; display: grid; min-height: 360px; place-items: center; }
+      .orbit { position: absolute; width: min(340px, 78vw); aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; animation: rotate 28s linear infinite; }
+      .orbit::before, .orbit::after { position: absolute; content: ""; border-radius: 50%; }
+      .orbit::before { width: 8px; height: 8px; top: 14%; right: 16%; background: var(--lime); box-shadow: 0 0 20px var(--lime); }
+      .orbit::after { width: 5px; height: 5px; bottom: 14%; left: 13%; background: #d0a6ff; }
+      .portrait { position: relative; width: min(245px, 58vw); aspect-ratio: 1; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(211,251,112,.35); border-radius: 50%; background: radial-gradient(circle at 30% 25%, #3b472d, #20251b 58%, #171914); box-shadow: 0 0 80px rgba(211,251,112,.08); }
+      .portrait span { color: var(--lime); font: 800 94px var(--display); letter-spacing: -.1em; transform: translateX(-4px); }
+      .portrait::after { position: absolute; inset: 12px; border: 1px solid rgba(243,241,233,.1); border-radius: 50%; content: ""; }
+      .orbit-label { position: absolute; right: 3%; bottom: 10%; padding: 10px 13px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font: 11px var(--mono); letter-spacing: .06em; }
+      .section { padding-block: 34px 92px; }
+      .section-head { display: flex; align-items: center; gap: 18px; margin-bottom: 25px; }
+      .section-number { color: var(--lime); font: 12px var(--mono); }
+      h2 { margin: 0; font: 700 24px var(--display); letter-spacing: -.04em; }
+      .section-rule { height: 1px; flex: 1; background: var(--line); }
+      .about-card { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; padding: 34px; border: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,.035), transparent 70%); }
+      .about-card p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.85; }
+      .about-card p strong { color: var(--text); font-weight: 600; }
+      .connect { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 30px 34px; border: 1px solid var(--line); background: var(--surface); }
+      .connect p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+      .connect .button { flex-shrink: 0; }
+      footer { min-height: 82px; display: flex; justify-content: space-between; align-items: center; gap: 18px; border-top: 1px solid var(--line); color: var(--muted); font: 11px var(--mono); }
+      .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .hero-copy { animation: rise .8s .1s both; }
+      .visual { animation: rise 1s .25s both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes rotate { to { transform: rotate(360deg); } }
+      @media (max-width: 760px) {
+        .wrap { width: min(100% - 36px, 560px); }
+        nav { height: 72px; }
+        .hero { grid-template-columns: 1fr; gap: 15px; padding-block: 70px 48px; }
+        .hero-copy { text-align: center; }
+        .eyebrow, .actions { justify-content: center; }
+        .intro { margin-inline: auto; }
+        .visual { min-height: 315px; }
+        .orbit { width: 280px; }
+        .portrait { width: 205px; }
+        .portrait span { font-size: 78px; }
+        .orbit-label { right: 2%; bottom: 5%; }
+        .section { padding-bottom: 66px; }
+        .about-card { grid-template-columns: 1fr; gap: 18px; padding: 24px; }
+        .connect { align-items: flex-start; flex-direction: column; padding: 24px; }
+        footer { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 20px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        .reveal { opacity: 1; transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Mahdi Reverted home"><span class="brand-mark">M</span><span>mahdi-reverted</span></a>
+        <a class="nav-link" href="https://bd.linkedin.com/in/mahdi-reverted" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </nav>
+
+      <main id="home">
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <div class="eyebrow">A little about me</div>
+            <h1 id="page-title">Mahdi<br /><span>Reverted.</span></h1>
+            <p class="intro">Welcome to my corner of the web. I’m Mahdi—this is my personal page. Find my professional profile and connect with me on LinkedIn.</p>
+            <div class="actions">
+              <a class="button" href="https://bd.linkedin.com/in/mahdi-reverted" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="button secondary" href="#about">A bit more <span class="arrow" aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <div class="visual" aria-label="Decorative initials illustration">
+            <div class="orbit" aria-hidden="true"></div>
+            <div class="portrait" aria-hidden="true"><span>MR</span></div>
+            <div class="orbit-label">PERSONAL PROFILE · <span id="local-time">HELLO</span></div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="about" aria-labelledby="about-title">
+          <div class="section-head"><span class="section-number">01 /</span><h2 id="about-title">A little introduction</h2><span class="section-rule"></span></div>
+          <div class="about-card">
+            <p><strong>Hi, I’m Mahdi Reverted.</strong> Thanks for stopping by. This page is a small introduction and a place to find my professional profile.</p>
+            <p>Want to know more about my background, experience, and what I’m working on? Visit my <a href="https://bd.linkedin.com/in/mahdi-reverted" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>—and say hello.</p>
+          </div>
+        </section>
+
+        <section class="section reveal" aria-labelledby="connect-title">
+          <div class="section-head"><span class="section-number">02 /</span><h2 id="connect-title">Let’s connect</h2><span class="section-rule"></span></div>
+          <div class="connect">
+            <div><h2>Find me on LinkedIn</h2><p>Visit my profile to see my details and get in touch.</p></div>
+            <a class="button" href="https://bd.linkedin.com/in/mahdi-reverted" target="_blank" rel="noopener noreferrer">Open profile <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer><span>© <span id="year"></span> Mahdi Reverted</span><span>Made for the web, with care.</span></footer>
+    </div>
+    <script>
+      const year = document.querySelector('#year');
+      year.textContent = new Date().getFullYear();
+
+      const progress = document.querySelector('#progress');
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0}%`;
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach((section) => revealObserver.observe(section));
+
+      const localTime = document.querySelector('#local-time');
+      const greet = () => {
+        const hour = new Date().getHours();
+        localTime.textContent = hour < 12 ? 'GOOD MORNING' : hour < 18 ? 'GOOD AFTERNOON' : 'GOOD EVENING';
+      };
+      greet();
+    </script>
+  </body>
+</html>
